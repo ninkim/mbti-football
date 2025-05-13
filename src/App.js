@@ -210,25 +210,47 @@ const mbtiTeams = {
         <div>
           <h2>당신의 닉네임을 입력해주세요</h2>
           <input
-            type="text"
-            value={nickname}
-            onChange={(e) => setNickname(e.target.value)}
-            placeholder="닉네임"
-          />
-          <br />
-          <button
-            onClick={() => setShowQuestions(true)}
-            disabled={!nickname.trim()}
-            style={{ marginTop: 10 }}
-          >
-            확인
-          </button>
+  type="text"
+  value={nickname}
+  onChange={(e) => setNickname(e.target.value)}
+  placeholder="닉네임"
+  style={{
+    fontSize: "16px",
+    padding: "12px 16px",
+    width: "250px",
+    borderRadius: "8px",
+    border: "1px solid #ccc",
+    marginBottom: "16px"
+  }}
+/>
+<br />
+<button
+  onClick={() => setShowQuestions(true)}
+  disabled={!nickname.trim()}
+  style={{
+    fontSize: "16px",
+    padding: "12px 24px",
+    borderRadius: "8px",
+    backgroundColor: "#007bff",
+    color: "white",
+    border: "none",
+    cursor: "pointer"
+  }}
+>
+  확인
+</button>
         </div>
       ) : result ? (
         <div>
           <h2>{nickname}님의 결과: {result.team}</h2>
           <img src={result.logo} alt="팀 로고" height={80} />
-        <p style={{ fontSize: "18px", lineHeight: "1.6", whiteSpace: "pre-line" }}
+        <p
+  style={{
+    whiteSpace: "pre-line",
+    fontSize: "16px",
+    lineHeight: "1.6",
+    marginTop: "20px"
+  }}
   dangerouslySetInnerHTML={{ __html: result.description(nickname) }}
 ></p>
           <button onClick={handleRestart}>다시 하기</button>
