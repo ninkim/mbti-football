@@ -8,16 +8,30 @@ function App() {
   const [result, setResult] = useState(null);
 
 const questions = [
-  "여행 계획을 짤 때, 일정표보다 '그날 가고 싶은 곳'을 마음대로 정하는 편인가요?",
-  "논란 많은 선수라도 실력만 뛰어나다면, 팀에 남겨야 한다고 생각하나요?",
-  "모임 자리에서 활발히 대화에 참여하기보다는, 관찰자로 있는 시간이 더 편한가요?",
-  "감독이 매 경기 새로운 전술을 실험할 때, '창의적이다'보다 '불안하다'는 감정이 더 먼저 떠오르나요?",
-  "오래 알고 지낸 친구라도 가치관이 어긋나면, 말없이 거리를 두는 대신 단호하게 관계를 정리하나요?",
-  "응원하던 팀이 구단주의 투자 철회로 무너질 때, 실망보단 '비즈니스란 이런 거지'라는 생각이 먼저 드나요?",
-  "감동적인 영화를 본 뒤, 그 감정의 여운이 하루 이상 이어지는 경우가 많나요?",
-  "중요한 경기를 위해 팀이 전통 색상과 문양을 바꾸겠다고 선언했을 때, 감정적으로 거부감이 드나요?",
-  "중요한 결정을 할 때, 직감보다 통계나 과거 데이터를 더 신뢰하나요?",
-  "중요한 경기에서 패배했을 때, 분노보다 '배울 점이 있다'는 쿨한 분석부터 하나요?"
+  // E / I
+  "스포츠바에서 낯선 팬들과 응원가 부르며 노는 게 즐거운 편인가요?",                  // E
+  "직관보다 집에서 혼자 조용히 보는 게 더 편하다고 느끼시나요?",                      // I
+  "경기 중 상대팬과 토론 벌이는 걸 오히려 즐기는 편인가요?",                         // E
+
+  // S / N
+  "선수의 커리어보단 최근 경기력만 보고 평가하는 편인가요?",                         // S
+  "“이 선수는 팀의 상징이야” 같은 스토리텔링이 중요한가요?",                         // N
+  "VAR 판정에서 규정보다 '의도'를 더 중시하나요?",                                    // N
+
+  // T / F
+  "좋아하는 선수가 부진하면, 냉정하게 교체를 말하는 편인가요?",                     // T
+  "팀이 이겨도 상대 팀 팬이 슬퍼 보이면 괜히 미안한 감정이 드나요?",                 // F
+  "감독 교체 시 성적보단 선수단 분위기나 팀워크를 더 신경 쓰나요?",                  // F
+
+  // J / P
+  "리그 일정이 미리 잘 짜여 있으면 그 자체로 안정감이 느껴지나요?",                  // J
+  "이적시장 마감 직전 깜짝 영입 같은 예측 불가 이벤트가 재밌다고 느끼나요?",         // P
+  "중요한 경기를 보기 위해 하루 일정을 미리 계획하는 편인가요?",                     // J
+
+  // 보조 (성향 보완)
+  "슈퍼리그, 월드컵 확대 같은 변화에 거부감보다 흥미가 더 드나요?",                   // P
+  "팀 컬러가 갑자기 바뀌면 상업성보다 정체성 훼손이 먼저 떠오르나요?",                // J
+  "내가 응원하는 팀이 강팀이 되면, 왠지 좀 시무룩해지기도 하나요?",                  // I
 ];
 
 const mbtiTeams = {
@@ -132,7 +146,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg"
   },
   ENTP: {
-    team: "도르트문트",
+    team: "도르트문트(Entp)",
     description: (name) =>
       `아이디어 폭발형 ${name}님은 [도르트문트]와 환상의 케미!  
       유망주 키우고, 매 시즌 신선한 전술 실험하는 팀 스타일이 너무 좋음ㅋㅋ  
@@ -142,17 +156,17 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/commons/6/67/Borussia_Dortmund_logo.svg"
   },
   ESTJ: {
-    team: "바이에른 뮌헨",
+    team: "바이에른 뮌헨(estj)",
     description: (name) =>
       `조직력과 실적 중시하는 ${name}님은 [바이에른 뮌헨]과 완벽 궁합!  
       매 시즌 우승 후보 아니면 안 보는 타입ㅋㅋ '계획된 우승'이 제일 감동적이죠!  
       어설픈 플레이 보면 참지 못하고, 전술 틀어지면 바로 지적 들어감;;  
       <span style="color:red">단점은… 감정 표현이 부족해서 옆 사람이 감동받아도 “저건 전략적 성공이야” 한마디로 끝냄ㅋㅋ  
       가끔은 이성 OFF, 감성 ON 모드도 켜줘요~</span>`,
-    logo: "https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_Munich_logo_%282017%29.svg"
+    logo: "https://i.namu.wiki/i/UX_S6ZuHJrH7oWd-xijuAy63Oo7IpIpVja4F3Op7auqQx0vtjS6DtUnwdMuRb3WSgOPILGC7dtVvQspsLSyfzSOB5-UcP_ydRZSJ-xxx1S7QDo2SFpaALVhP2P2qq2_CX3wcVcK50xNUypES-4te6g.svg"
   },
   ESFJ: {
-    team: "나폴리",
+    team: "나폴리(esfj)",
     description: (name) =>
       `정 많고 공동체 사랑 넘치는 ${name}님은 [나폴리] 스타일이에요~  
       팬들과 함께 노래하고, 동네 주민 다 아는 것 같은 정겨움ㅋㅋ  
@@ -162,7 +176,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/commons/2/2d/SSC_Neapel.svg"
   },
   ENFJ: {
-    team: "아스날",
+    team: "아스날(enfj)",
     description: (name) =>
       `이상주의적 리더 ${name}님은 [아스날]과 딱 맞는 궁합!  
       팀이 슬럼프일 때도 “우리 다시 일어날 수 있어요”라며 희망 전파함ㅋㅋ  
@@ -174,18 +188,44 @@ const mbtiTeams = {
 };
 
 
-  const getMbti = () => {
-    if (answers.length < questions.length) return null;
+ const getMbti = () => {
+  if (answers.length < questions.length) return null;
 
-    const mbti = [
-      answers[0] ? "I" : "E",
-      answers[1] ? "N" : "S",
-      answers[2] ? "T" : "F",
-      answers[3] ? "P" : "J"
-    ].join("");
+  const scores = { E: 0, I: 0, S: 0, N: 0, T: 0, F: 0, J: 0, P: 0 };
 
-    return mbti;
-  };
+  const dimensions = [
+    "E", "I", "E",  // Q1–Q3 (외향 vs 내향)
+    "S", "N", "N",  // Q4–Q6 (감각 vs 직관)
+    "T", "F", "F",  // Q7–Q9 (사고 vs 감정)
+    "J", "P", "J",  // Q10–Q12 (판단 vs 인식)
+    "P", "J", "I"   // Q13–Q15 (보조질문: 성향 보정용)
+  ];
+
+  answers.forEach((answer, idx) => {
+    const trait = dimensions[idx];
+    const opposite = {
+      E: "I", I: "E",
+      S: "N", N: "S",
+      T: "F", F: "T",
+      J: "P", P: "J"
+    };
+
+    if (answer) {
+      scores[trait]++;
+    } else {
+      scores[opposite[trait]]++;
+    }
+  });
+
+  const mbti = [
+    scores["E"] >= scores["I"] ? "E" : "I",
+    scores["S"] >= scores["N"] ? "S" : "N",
+    scores["T"] >= scores["F"] ? "T" : "F",
+    scores["J"] >= scores["P"] ? "J" : "P"
+  ].join("");
+
+  return mbti;
+};
 
   const handleSelect = (value) => {
     setAnswers([...answers, value]);
