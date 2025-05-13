@@ -1,6 +1,9 @@
+
+
 import { useState } from "react";
 import "./App.css";
 
+function App() {
 const questions = [
   // 질문 생략 (변경 없음)
 ];
@@ -89,3 +92,4 @@ const mbtiTeams = {
 };
 
 // 결과 출력 시: <p>{result.description(nickname)}</p> 형태로 렌더링 필요
+export default App;
