@@ -256,17 +256,46 @@ const mbtiTeams = {
           <button onClick={handleRestart}>다시 하기</button>
         </div>
       ) : answers.length < questions.length ? (
-        <div>
-          <h3>Q{answers.length + 1}. {questions[answers.length]}</h3>
-          <button onClick={() => handleSelect(true)}>그렇다</button>
-          <button onClick={() => handleSelect(false)} style={{ marginLeft: 10 }}>
-            아니다
-          </button>
-        </div>
-      ) : (
-        <button onClick={handleFinish}>결과 보기</button>
-      )}
+  <div style={{ textAlign: "center", marginTop: "40px" }}>
+    <div style={{ fontSize: "20px", marginBottom: "30px" }}>
+      <strong>Q{answers.length + 1}.</strong>
+      <br />
+      {questions[answers.length]}
     </div>
+
+    <div>
+      <button
+        onClick={() => handleSelect(true)}
+        style={{
+          fontSize: "18px",
+          padding: "14px 28px",
+          marginRight: "16px",
+          borderRadius: "10px",
+          backgroundColor: "#28a745",
+          color: "white",
+          border: "none",
+          cursor: "pointer"
+        }}
+      >
+        그렇다
+      </button>
+
+      <button
+        onClick={() => handleSelect(false)}
+        style={{
+          fontSize: "18px",
+          padding: "14px 28px",
+          borderRadius: "10px",
+          backgroundColor: "#dc3545",
+          color: "white",
+          border: "none",
+          cursor: "pointer"
+        }}
+      >
+        아니다
+      </button>
+    </div>
+  </div>
   );
 }
 
