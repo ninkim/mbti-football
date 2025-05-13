@@ -208,7 +208,7 @@ const mbtiTeams = {
     <div className="App" style={{ padding: 20, fontFamily: "sans-serif" }}>
       {!showQuestions ? (
         <div>
-          <h2>당신의 닉네임을 입력해주세요</h2>
+          <h2>내 성격과 비슷한 클럽은?</h2>
           <input
             type="text"
             value={nickname}
