@@ -3,6 +3,7 @@ import "./App.css";
 
 function App() {
   const [nickname, setNickname] = useState("");
+  const [showQuestions, setShowQuestions] = useState(false);
   const [answers, setAnswers] = useState([]);
   const [result, setResult] = useState(null);
 
@@ -20,21 +21,22 @@ function App() {
   const mbtiTeams = {
     INFP: {
       team: "FC 바르셀로나",
-      description: (name) => `철학과 감성이 충만한 ${name}님에게 딱 맞는 팀은 [바르셀로나!]`,
+      description: (name) =>
+        `철학과 감성이 충만한 ${name}님에게 딱 맞는 팀은 [바르셀로나!]`,
       logo: "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg"
     },
     ESTJ: {
       team: "바이에른 뮌헨",
-      description: (name) => `책임감 넘치는 ${name}님에게 어울리는 팀은 [바이에른 뮌헨!]`,
+      description: (name) =>
+        `책임감 넘치는 ${name}님에게 어울리는 팀은 [바이에른 뮌헨!]`,
       logo: "https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_Munich_logo_%282017%29.svg"
     }
-    // ... 나머지 MBTI도 추가 가능
+    // 나머지 MBTI는 원하는 만큼 추가
   };
 
   const getMbti = () => {
     if (answers.length < questions.length) return null;
 
-    // 간단한 MBTI 계산 예시 (더 정교하게 가능)
     const mbti = [
       answers[0] ? "I" : "E",
       answers[1] ? "N" : "S",
@@ -49,40 +51,53 @@ function App() {
     setAnswers([...answers, value]);
   };
 
+  const handleFinish = () => {
+    const mbti = getMbti();
+    const teamInfo = mbtiTeams[mbti] || mbtiTeams["INFP"];
+    setResult(teamInfo);
+  };
+
   const handleRestart = () => {
+    setNickname("");
+    setShowQuestions(false);
     setAnswers([]);
     setResult(null);
   };
 
-  const handleFinish = () => {
-    const mbti = getMbti();
-    const teamInfo = mbtiTeams[mbti] || mbtiTeams["INFP"]; // fallback
-    setResult(teamInfo);
-  };
-
   return (
     <div className="App" style={{ padding: 20, fontFamily: "sans-serif" }}>
-      {!nickname ? (
+      {!showQuestions ? (
         <div>
           <h2>당신의 닉네임을 입력해주세요</h2>
           <input
             type="text"
+            value={nickname}
             onChange={(e) => setNickname(e.target.value)}
             placeholder="닉네임"
           />
+          <br />
+          <button
+            onClick={() => setShowQuestions(true)}
+            disabled={!nickname.trim()}
+            style={{ marginTop: 10 }}
+          >
+            확인
+          </button>
         </div>
       ) : result ? (
         <div>
-          <h2>결과: {result.team}</h2>
+          <h2>{nickname}님의 결과: {result.team}</h2>
           <img src={result.logo} alt="팀 로고" height={80} />
           <p>{result.description(nickname)}</p>
           <button onClick={handleRestart}>다시 하기</button>
         </div>
       ) : answers.length < questions.length ? (
         <div>
-          <h3>{questions[answers.length]}</h3>
+          <h3>Q{answers.length + 1}. {questions[answers.length]}</h3>
           <button onClick={() => handleSelect(true)}>그렇다</button>
-          <button onClick={() => handleSelect(false)}>아니다</button>
+          <button onClick={() => handleSelect(false)} style={{ marginLeft: 10 }}>
+            아니다
+          </button>
         </div>
       ) : (
         <button onClick={handleFinish}>결과 보기</button>
