@@ -228,7 +228,9 @@ const mbtiTeams = {
         <div>
           <h2>{nickname}님의 결과: {result.team}</h2>
           <img src={result.logo} alt="팀 로고" height={80} />
-          <p>{result.description(nickname)}</p>
+         <p style={{ whiteSpace: "pre-line", fontSize: "18px", lineHeight: "1.6" }}>
+  {result.description(nickname)}
+</p>
           <button onClick={handleRestart}>다시 하기</button>
         </div>
       ) : answers.length < questions.length ? (
