@@ -36,7 +36,7 @@ const questions = [
 
 const mbtiTeams = {
   INFP: {
-    team: "FC 바르셀로나",
+    team: "FC 바르셀로나(infp)",
     description: (name) =>
       `철학과 감성의 화신 ${name}님에게 어울리는 팀은 [FC 바르셀로나]입니다!  
       당신은 승부보다 '아름다운 플레이'에 가슴이 뛰고, 메시의 드리블에서 삶의 의미를 찾는 타입이죠.  
@@ -46,7 +46,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/4/47/FC_Barcelona_%28crest%29.svg"
   },
   ENTJ: {
-    team: "인터 밀란",
+    team: "인터 밀란(entj)",
     description: (name) =>
       `리더십과 전략적 사고의 대명사 ${name}님은 [인터 밀란] 스타일입니다.  
       당신은 팀을 승리로 이끄는 설계자. 상대 전술은 이미 어제 분석 끝났고, 미팅도 본인이 주재하죠.  
@@ -56,7 +56,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/commons/0/05/FC_Internazionale_Milano_2021.svg"
   },
   ISFP: {
-    team: "AS 로마",
+    team: "AS 로마(isfp)",
     description: (name) =>
       `감성과 충성심의 결정체 ${name}님은 [AS 로마]와 운명적으로 연결돼 있어요~  
       당신은 유니폼 색깔에도 감정이입하고, 경기장의 햇살까지 기억하는 섬세한 팬!  
@@ -66,7 +66,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/f/f7/AS_Roma_logo_%282017%29.svg"
   },
   INTJ: {
-    team: "맨체스터 시티",
+    team: "맨체스터 시티(intj)",
     description: (name) =>
       `전술 설계의 달인 ${name}님은 [맨체스터 시티]가 찰떡입니다!  
       당신은 축구를 감정이 아닌 '해결해야 할 퍼즐'로 보는 전략가 스타일!  
@@ -76,7 +76,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg"
   },
   INFJ: {
-    team: "파리 생제르맹",
+    team: "파리 생제르맹(infj)",
     description: (name) =>
       `비전과 가치로 움직이는 ${name}님은 [파리 생제르맹] 타입!  
       축구는 단순한 경기가 아니라, 세상과 연결된 철학이자 이상향이죠✨  
@@ -86,7 +86,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/a/a7/Paris_Saint-Germain_F.C..svg"
   },
   ISTJ: {
-    team: "레알 마드리드",
+    team: "레알 마드리드(istj)",
     description: (name) =>
       `규칙과 실력, 그리고 명문 구단의 위엄을 중시하는 ${name}님은 [레알 마드리드] 그 자체입니다.  
       "역사는 결과로 말한다"는 철학 아래, 꾸준함과 냉정함으로 팀을 응원하죠!  
@@ -96,7 +96,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/5/56/Real_Madrid_CF.svg"
   },
   ISFJ: {
-    team: "첼시 FC",
+    team: "첼시 FC(isfj)",
     description: (name) =>
       `헌신과 책임감의 화신 ${name}님은 [첼시 FC]에 딱이에요!  
       팀이 힘들어도 떠나지 않고, 조용히 묵묵히 응원하는 그런 든든한 팬~  
@@ -106,7 +106,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg"
   },
   INTP: {
-    team: "아약스",
+    team: "아약스(intp)",
     description: (name) =>
       `아이디어와 전술 실험을 좋아하는 ${name}님은 [아약스]가 딱이에요!  
       유소년 시스템? 포지션 변경? 이런 창의적 실험 좋아 죽음ㅋㅋ  
@@ -116,7 +116,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/7/79/Ajax_Amsterdam.svg"
   },
   ESTP: {
-    team: "토트넘 홋스퍼",
+    team: "토트넘 홋스퍼(estp)",
     description: (name) =>
       `열정! 속도! 돌격! ${name}님은 [토트넘]같은 에너지 폭발형 팬입니다.  
       경기 시작하자마자 소리 지르고, 옆 사람과 하이파이브하고, 응원가는 이미 암기 완료ㅋㅋ  
@@ -126,7 +126,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg"
   },
   ESFP: {
-    team: "마르세유",
+    team: "마르세유(esfp)",
     description: (name) =>
       `열정과 축제의 아이콘 ${name}님은 [마르세유]가 딱이에요!  
       경기 보는 게 아니라 공연 보는 듯한 감각! 선수 소개 나올 때 이미 감정 200% 투입ㅋㅋ  
@@ -136,7 +136,7 @@ const mbtiTeams = {
     logo: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Olympique_Marseille_logo.svg"
   },
   ENFP: {
-    team: "리버풀",
+    team: "리버풀(enfp)",
     description: (name) =>
       `열정과 희망의 전도사 ${name}님은 [리버풀]과 찰떡이에요!  
       "You'll Never Walk Alone" 부를 때 눈물 찔끔 흘린 적 있다면 이미 당신은 레즈ㅋㅋ  
