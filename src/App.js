@@ -119,7 +119,7 @@ const mbtiTeams = {
       무대 체질이라 경기장 분위기 띄우는 데 일가견 있음~  
       <span style="color:red">단점은… 실력 안 보고 얼굴로 응원선수 고르는 경향 있음ㅋㅋ (응...? 아닌가요?)  
       그래도 분위기 메이커가 최고죠! 덕분에 모두가 신납니다~</span>`,
-    logo: "https://upload.wikimedia.org/wikipedia/en/5/58/Olympique_Marseille_logo.svg"
+    logo: "https://upload.wikimedia.org/wikipedia/commons/d/d8/Olympique_Marseille_logo.svg"
   },
   ENFP: {
     team: "리버풀",
