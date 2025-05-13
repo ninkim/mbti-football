@@ -89,7 +89,7 @@ const mbtiTeams = {
     description: (name) => `책임감 넘치는 ${name}님에게 어울리는 팀은 [바이에른 뮌헨!]\n\n시스템과 효율을 중시하는 스타일, 정말 닮았어요.\n근데 유연성 부족해서 사람 피곤하게 할 수 있다구요...`,
     logo: "https://upload.wikimedia.org/wikipedia/en/1/1f/FC_Bayern_Munich_logo_%282017%29.svg"
   }
-};
-
+}
+}
 // 결과 출력 시: <p>{result.description(nickname)}</p> 형태로 렌더링 필요
 export default App;
