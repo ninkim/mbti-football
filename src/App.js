@@ -208,7 +208,7 @@ const mbtiTeams = {
     <div className="App" style={{ padding: 20, fontFamily: "sans-serif" }}>
       {!showQuestions ? (
         <div>
-          <h2> 내 성격과 비슷한 월클 구단은? </h2>
+          <h2> 내 성격과 가장 비슷한 월클 구단은? </h2>
           <input
             type="text"
             value={nickname}
@@ -271,8 +271,8 @@ const mbtiTeams = {
         </div>
       ) : answers.length < questions.length ? (
         <div style={{ textAlign: "center", marginTop: "40px" }}>
-          <div style={{ fontSize: "22px", marginBottom: "30px" }}>
-            <strong style={{ fontSize: "24px" }}>
+          <div style={{ fontSize: "18px", marginBottom: "30px" }}>
+            <strong style={{ fontSize: "18px" }}>
               Q{answers.length + 1}.
             </strong>
             <br />
