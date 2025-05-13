@@ -283,7 +283,7 @@ const mbtiTeams = {
       <button
         onClick={() => handleSelect(false)}
         style={{
-          fontSize: "18px",
+          fontSize: "25px",
           padding: "14px 28px",
           borderRadius: "10px",
           backgroundColor: "#dc3545",
@@ -291,6 +291,8 @@ const mbtiTeams = {
           border: "none",
           cursor: "pointer"
         }}
+
+        
       >
         아니다
       </button>
