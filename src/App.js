@@ -256,48 +256,50 @@ const mbtiTeams = {
           <button onClick={handleRestart}>다시 하기</button>
         </div>
       ) : answers.length < questions.length ? (
-  <div style={{ textAlign: "center", marginTop: "40px" }}>
-    <div style={{ fontSize: "20px", marginBottom: "30px" }}>
-      <strong>Q{answers.length + 1}.</strong>
-      <br />
-      {questions[answers.length]}
-    </div>
-
-    <div>
-      <button
-        onClick={() => handleSelect(true)}
-        style={{
-          fontSize: "18px",
-          padding: "14px 28px",
-          marginRight: "16px",
-          borderRadius: "10px",
-          backgroundColor: "#28a745",
-          color: "white",
-          border: "none",
-          cursor: "pointer"
-        }}
-      >
-        그렇다
-      </button>
-
-      <button
-        onClick={() => handleSelect(false)}
-        style={{
-          fontSize: "25px",
-          padding: "14px 28px",
-          borderRadius: "10px",
-          backgroundColor: "#dc3545",
-          color: "white",
-          border: "none",
-          cursor: "pointer"
-        }}
-
-        
-      >
-        아니다
-      </button>
-    </div>
+<div style={{ textAlign: "center", marginTop: "40px" }}>
+  <div style={{ fontSize: "22px", marginBottom: "30px" }}>
+    <strong style={{ fontSize: "24px" }}>
+      Q{answers.length + 1}.
+    </strong>
+    <br />
+    {questions[answers.length]}
   </div>
+
+  <div>
+    <button
+      onClick={() => handleSelect(true)}
+      style={{
+        fontSize: "22px",
+        padding: "18px 32px",
+        marginRight: "20px",
+        borderRadius: "12px",
+        backgroundColor: "#28a745",
+        color: "white",
+        border: "none",
+        cursor: "pointer",
+        minWidth: "120px"
+      }}
+    >
+      그렇다
+    </button>
+
+    <button
+      onClick={() => handleSelect(false)}
+      style={{
+        fontSize: "22px",
+        padding: "18px 32px",
+        borderRadius: "12px",
+        backgroundColor: "#dc3545",
+        color: "white",
+        border: "none",
+        cursor: "pointer",
+        minWidth: "120px"
+      }}
+    >
+      아니다
+    </button>
+  </div>
+</div>
   );
 }
 
