@@ -315,7 +315,19 @@ const mbtiTeams = {
           </div>
         </div>
       ) : (
-        <button onClick={handleFinish}>결과 보기</button>
+        <button onClick={handleFinish}>
+
+            style={{
+              marginTop: "20px",
+              padding: "12px 24px",
+              fontSize: "16px",
+              borderRadius: "8px",
+              backgroundColor: "#6c757d",
+              color: "white",
+              border: "none",
+              cursor: "pointer"
+            }}
+          결과 보기</button>
       )}
     </div>
   );
