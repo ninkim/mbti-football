@@ -314,20 +314,25 @@ const mbtiTeams = {
             </button>
           </div>
         </div>
-      ) : (
-        <button onClick={handleFinish}>
-
+           ) : (
+        <div style={{ textAlign: "center", marginTop: "40px" }}>
+          <button
+            onClick={handleFinish}
             style={{
               marginTop: "20px",
-              padding: "12px 24px",
-              fontSize: "16px",
-              borderRadius: "8px",
+              padding: "16px 32px",
+              fontSize: "18px",
+              borderRadius: "10px",
               backgroundColor: "#6c757d",
               color: "white",
               border: "none",
-              cursor: "pointer"
+              cursor: "pointer",
+              minWidth: "160px"
             }}
-          결과 보기</button>
+          >
+            결과 보기
+          </button>
+        </div>
       )}
     </div>
   );
